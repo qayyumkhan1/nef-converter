@@ -47,10 +47,10 @@ RUN chown -R appuser:appuser /app
 
 USER appuser
 
-EXPOSE 7860
+EXPOSE 8000
 
 # =========================================================
 # Start API
 # =========================================================
 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]

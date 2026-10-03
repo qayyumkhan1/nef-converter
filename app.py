@@ -1,4 +1,5 @@
 import os
+import uvicorn  
 import shutil
 import subprocess
 import tempfile
@@ -377,3 +378,12 @@ async def health():
         ],
         "acsm": "requires Adobe DRM fulfillment workflow"
     }
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", "1024"))
+    uvicorn.run(
+        app,
+        host="0.0.0.0",
+        port=port
+    )
